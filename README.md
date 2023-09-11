@@ -1,66 +1,34 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+The is my stage one task on HNG 2023
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Create an endpoint using any laravel.
+This endpoint should accept two GET request query parameters and return specific information in JSON format.
 
-## About Laravel
+The backend api endpoint should only point to /api. the query parameter  /api?slack_name=benrobo&track=backend should only be passed from the client.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+The information required includes: -
+Slack name - Current day of the week -
+Current UTC time (with validation of +/-2) -
+Track - The GitHub URL of the file being run -
+The GitHub URL of the full source code. - A Status Code of Success
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+ JSON - { - "slack_name": "example_name",
+ "current_day": "Monday",
+ "utc_time": "2023-08-21T15:04:05Z",
+ "track": "backend", -
+ "github_file_url": "https://github.com/username/repo/blob/main/file_name.ext", -
+ "github_repo_url": "https://github.com/username/repo", -
+ “status_code”: 200 -
+ }
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
-
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+ Acceptance Criteria - Endpoint Creation: Provide a publicly accessible endpoint.
+ - GET Parameters: The endpoint should accept two GET request query parameters: slack_name and track. E.g.: http://example.com/api?slack_name=example_name&track=backend.
+ - Slack Name: The response should include the slack_name passed as a GET request query parameter.
+ - Current Day of the Week: Display the current day of the week in full (e.g., Monday, Tuesday, etc.).
+ - Current UTC Time: Return the current UTC time, accurate within a +/-2 minute window.
+ - Track: The response should display the track of the you signed up for (Backend).
+ This will be based on the track GET parameter passed to the endpoint.
+ - GitHub File URL: Include a direct link to the specific file in the GitHub repository that's being executed.
+ - GitHub Repo URL: Include a link to the main page of the GitHub repository containing the project's entire source code.
+ - Status Code: Return 200 as Integer. - JSON Format: The endpoint's response should adhere to the specified JSON format.
+ - Testing: Before submission: - Ensure the endpoint is accessible. - Check the returned JSON against the defined format.
+ - Validate the correctness of each data point in the JSON response.
