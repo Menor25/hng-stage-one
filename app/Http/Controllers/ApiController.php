@@ -18,8 +18,8 @@ class ApiController extends Controller
         $currentDay = Carbon::now()->format('l');
 
         // GitHub urls
-        $githubFileUrl = 'https://github.com/username/repo/blob/main/file_name.ext';
-        $githubRepoUrl = 'https://github.com/Menor25/hng-stage-one.git';
+        $githubFileUrl = 'https://github.com/Menor25/hng-stage-one/blob/main/app/Http/Controllers/ApiController.php';
+        $githubRepoUrl = 'https://github.com/Menor25/hng-stage-one';
 
         // Response data
         $data = [
